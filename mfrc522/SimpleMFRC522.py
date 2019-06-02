@@ -8,7 +8,9 @@ class SimpleMFRC522:
   READER = None
   
   KEY = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
-  BLOCK_ADDRS = [8, 9, 10]
+  # As documentation states here https://lastminuteengineers.com/how-rfid-works-rc522-arduino-tutorial/
+  # there's 16 sectors x 4 blocks x 16 bytes of data = 1024 bytes = 1K memory
+  BLOCK_ADDRS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
   
   def __init__(self):
     self.READER = MFRC522()
